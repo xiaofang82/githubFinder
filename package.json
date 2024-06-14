@@ -1,6 +1,6 @@
 {
   "name": "finder",
-  
+  "homepage": "https://xiaofang82.github.io/githubFinder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

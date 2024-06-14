@@ -1,6 +1,6 @@
 {
   "name": "finder",
-  "homepage": "https://xiaofang82.github.io/githubFinder",
+  "homepage": "/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prestart": "npm run set-dev-homepage",
+    "prebuild": "npm run set-prod-homepage",
+    "set-dev-homepage": "node -e \"let package=require('./package.json'); package.homepage='/'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2));\"",
+    "set-prod-homepage": "node -e \"let package=require('./package.json'); package.homepage='https://xiaofang82.github.io/githubFinder'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2));\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
